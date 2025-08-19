@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Request Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+
+    <div class="w-full max-w-4xl">
+        <!-- Form Container -->
+        <div id="form-container" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200 fade-in">
+            <div class="mb-6 text-center">
+                <h1 class="text-3xl font-bold text-gray-800">Activity Form</h1>
+                <p class="text-gray-500 mt-2">Please fill out the details for your activity below.</p>
+            </div>
+            
+            <form id="event-form">
+                <!-- Main Details Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="agent-name" class="block text-sm font-medium text-gray-700 mb-1">Agent Name</label>
+                        <select id="agent-name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                            <option value="" disabled selected>Select an Agent</option>
+                            <option value="AbanoubMakram">AbanoubMakram</option>
+                            <option value="AbdelazizAshraf">AbdelazizAshraf</option>
+                            <option value="AbdelrahmanAdel">AbdelrahmanAdel</option>
+                            <option value="AbdelrahmanSalem">AbdelrahmanSalem</option>
+                            <option value="AbdullahTariq">AbdullahTariq</option>
+                            <option value="AhmadAshraf">AhmadAshraf</option>
+                            <option value="AhmedIessa">AhmedIessa</option>
+                            <option value="AlaaHamdi">AlaaHamdi</option>
+                            <option value="AlaaTariq">AlaaTariq</option>
+                            <option value="AliAshraf">AliAshraf</option>
+                            <option value="AlyMuhammad">AlyMuhammad</option>
+                            <option value="AlshaimaaAhmed">AlshaimaaAhmed</option>
+                            <option value="Amal Ahmad">Amal Ahmad</option>
+                            <option value="AmaniAssem">AmaniAssem</option>
+                            <option value="AmrAlsayed">AmrAlsayed</option>
+                            <option value="AnoudMohamed">AnoudMohamed</option>
+                            <option value="AyaNabel">AyaNabel</option>
+                            <option value="AyaRajab">AyaRajab</option>
+                            <option value="PassantBeshara">PassantBeshara</option>
+                            <option value="BeshoyZekry">BeshoyZekry</option>
+                            <option value="DavidEmad">DavidEmad</option>
+                            <option value="DinaAnwar">DinaAnwar</option>
+                            <option value="DinaAtef">DinaAtef</option>
+                            <option value="DoaaAhmad">DoaaAhmad</option>
+                            <option value="DoniaHosny">DoniaHosny</option>
+                            <option value="IbtesamMahrous">IbtesamMahrous</option>
+                            <option value="ElariaAtef">ElariaAtef</option>
+                            <option value="elhamabdelsalam">elhamabdelsalam</option>
+                            <option value="EmanMarey">EmanMarey</option>
+                            <option value="EmanHossny">EmanHossny</option>
+                            <option value="EnasAdel">EnasAdel</option>
+                            <option value="Eslamalazhary">Eslamalazhary</option>
+                            <option value="EsraaAhmed">EsraaAhmed</option>
+                            <option value="EsraaIbrahim">EsraaIbrahim</option>
+                            <option value="FarahAtef">FarahAtef</option>
+                            <option value="FairouzFanos">FairouzFanos</option>
+                            <option value="Filopateerboshra">Filopateerboshra</option>
+                            <option value="Habibamontaser">Habibamontaser</option>
+                            <option value="HagarMagdi">HagarMagdi</option>
+                            <option value="HebaZakaria">HebaZakaria</option>
+                            <option value="HishamYosri">HishamYosri</option>
+                            <option value="HossamZohair">HossamZohair</option>
+                            <option value="Ibraheemmamdoh">Ibraheemmamdoh</option>
+                            <option value="EmanElsayed">EmanElsayed</option>
+                            <option value="islamsiam">islamsiam</option>
+                            <option value="LamaNabil">LamaNabil</option>
+                            <option value="LamiaaEssam">LamiaaEssam</option>
+                            <option value="MahaMuhammed">MahaMuhammed</option>
+                            <option value="MahaTarek">MahaTarek</option>
+                            <option value="MahmodAhmad">MahmodAhmad</option>
+                            <option value="MahmoudAshraf">MahmoudAshraf</option>
+                            <option value="MahmoudAnwar">MahmoudAnwar</option>
+                            <option value="MahmoudIbrahem">MahmoudIbrahem</option>
+                            <option value="MahmodRashad">MahmodRashad</option>
+                            <option value="MahrailMagid">MahrailMagid</option>
+                            <option value="MalakAbdelnaser">MalakAbdelnaser</option>
+                            <option value="Manalmohamed">Manalmohamed</option>
+                            <option value="MaramMohamed">MaramMohamed</option>
+                            <option value="MariamMoustafa">MariamMoustafa</option>
+                            <option value="MariamNasser">MariamNasser</option>
+                            <option value="MartinaNabil">MartinaNabil</option>
+                            <option value="MaiadaAli">MaiadaAli</option>
+                            <option value="MayarIsmail">MayarIsmail</option>
+                            <option value="minaezat">minaezat</option>
+                            <option value="MinaMelad">MinaMelad</option>
+                            <option value="MoamenSami">MoamenSami</option>
+                            <option value="Mohamedelbarbary">Mohamedelbarbary</option>
+                            <option value="MuhammedHashem">MuhammedHashem</option>
+                            <option value="MahmmadMagdyHanfy">MahmmadMagdyHanfy</option>
+                            <option value="Mohammedibraheem">Mohammedibraheem</option>
+                            <option value="Monahassan">Monahassan</option>
+                            <option value="MonaRagab">MonaRagab</option>
+                            <option value="mosaabali">mosaabali</option>
+                            <option value="muhammadelkhateeb">muhammadelkhateeb</option>
+                            <option value="MuhammedFathi">MuhammedFathi</option>
+                            <option value="NadaHamada">NadaHamada</option>
+                            <option value="NermineElfeki">NermineElfeki</option>
+                            <option value="NermineRamsis">NermineRamsis</option>
+                            <option value="NesmaEid">NesmaEid</option>
+                            <option value="Nohasameer">Nohasameer</option>
+                            <option value="NourhanSalah">NourhanSalah</option>
+                            <option value="NourhanMohamed">NourhanMohamed</option>
+                            <option value="RanaShawki">RanaShawki</option>
+                            <option value="RaniaAbdelsalam">RaniaAbdelsalam</option>
+                            <option value="rawanismael">rawanismael</option>
+                            <option value="RehamNabil">RehamNabil</option>
+                            <option value="RehanAbbas">RehanAbbas</option>
+                            <option value="SaadSaad">SaadSaad</option>
+                            <option value="SamaRoshdi">SamaRoshdi</option>
+                            <option value="SamarMorsy">SamarMorsy</option>
+                            <option value="SaraSaleh">SaraSaleh</option>
+                            <option value="SarahFakhri">SarahFakhri</option>
+                            <option value="SherinSayed">SherinSayed</option>
+                            <option value="ShaimaaLotfy">ShaimaaLotfy</option>
+                            <option value="Shorouksayed">Shorouksayed</option>
+                            <option value="SiharAshraf">SiharAshraf</option>
+                            <option value="SilvanaEmad">SilvanaEmad</option>
+                            <option value="SilvianaAdel">SilvianaAdel</option>
+                            <option value="SohailaAbdelwahed">SohailaAbdelwahed</option>
+                            <option value="SohailaMahmoud">SohailaMahmoud</option>
+                            <option value="SohailaElsayed">SohailaElsayed</option>
+                            <option value="SuzanMagdi">SuzanMagdi</option>
+                            <option value="TamerRefaei">TamerRefaei</option>
+                            <option value="TrizaSaber">TrizaSaber</option>
+                            <option value="YaraEmad">YaraEmad</option>
+                            <option value="YaraHassan">YaraHassan</option>
+                            <option value="Yasmin Ezz">Yasmin Ezz</option>
+                            <option value="YostinaHany">YostinaHany</option>
+                            <option value="HajarAbdullah">HajarAbdullah</option>
+                            <option value="SondosSaleh">SondosSaleh</option>
+                            <option value="HagerYoussef">HagerYoussef</option>
+                            <option value="KamalGhoneem">KamalGhoneem</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="team-leader" class="block text-sm font-medium text-gray-700 mb-1">Team Leader</label>
+                        <select id="team-leader" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                            <option value="" disabled selected>Select a Team Leader</option>
+                            <option value="Maher Lofty">Maher Lofty</option>
+                            <option value="Ahmed hamed">Ahmed hamed</option>
+                            <option value="Youhana Shokry">Youhana Shokry</option>
+                            <option value="Kirolos Gameel">Kirolos Gameel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Dynamic Date and Time Section -->
+                <div class="space-y-4 mb-6" id="date-time-section">
+                    <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">Activity Dates & Times</h2>
+                    <!-- This container will hold the dynamically added date/time fields -->
+                </div>
+
+                <!-- Action Buttons for Dates -->
+                <div class="flex items-center gap-4 mb-8">
+                    <button type="button" id="add-date-btn" class="bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition shadow-sm">
+                        Add Date
+                    </button>
+                    <p id="date-counter" class="text-sm text-gray-500">1 of 5 dates added.</p>
+                </div>
+
+                <!-- Form Submission Button -->
+                <div class="text-center">
+                    <button type="submit" id="submit-btn" class="w-full md:w-auto bg-green-600 text-white font-bold py-3 px-12 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Submission Status Container (Initially Hidden) -->
+        <div id="submission-status-container" class="hidden bg-white p-8 rounded-xl shadow-lg border border-gray-200 fade-in text-center">
+             <div id="loading-spinner" class="spinner mx-auto mb-4"></div>
+             <h2 id="status-heading" class="text-2xl font-bold text-gray-800">Submitting...</h2>
+             <p id="status-message" class="text-gray-600 mt-2">Please wait while we send your activity details.</p>
+             <div class="text-center mt-8">
+                <button id="new-form-btn" class="hidden bg-gray-600 text-white font-bold py-2 px-8 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition shadow-sm">
+                    Submit Another Response
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('event-form');
+            const dateTimeSection = document.getElementById('date-time-section');
+            const addDateBtn = document.getElementById('add-date-btn');
+            const dateCounter = document.getElementById('date-counter');
+            const formContainer = document.getElementById('form-container');
+            const newFormBtn = document.getElementById('new-form-btn');
+            const statusContainer = document.getElementById('submission-status-container');
+            const statusHeading = document.getElementById('status-heading');
+            const statusMessage = document.getElementById('status-message');
+            const loadingSpinner = document.getElementById('loading-spinner');
+
+            // !!! IMPORTANT: PASTE YOUR GOOGLE APPS SCRIPT URL HERE !!!
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxaM9rYx10x3Zkx9gUlvTzNH5hQ0bY090DfOCIu80Qpedd5zg0a7bVCcP3hQ5hLR3pW/exec";
+
+            const MAX_DATES = 5;
+            let dateCount = 0;
+
+            const updateDateCounter = () => {
+                dateCounter.textContent = `${dateCount} of ${MAX_DATES} dates added.`;
+                addDateBtn.disabled = dateCount >= MAX_DATES;
+                addDateBtn.classList.toggle('opacity-50', dateCount >= MAX_DATES);
+                addDateBtn.classList.toggle('cursor-not-allowed', dateCount >= MAX_DATES);
+            };
+
+            const addDateTimeEntry = () => {
+                if (dateCount >= MAX_DATES) return;
+                dateCount++;
+
+                const entryId = `date-entry-${dateCount}`;
+                const entryDiv = document.createElement('div');
+                entryDiv.className = 'p-4 border rounded-lg bg-gray-50 fade-in';
+                entryDiv.id = entryId;
+
+                entryDiv.innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-semibold text-gray-600">Entry #${dateCount}</h3>
+                        ${dateCount > 1 ? `<button type="button" class="remove-date-btn text-red-500 hover:text-red-700 font-semibold text-sm" data-target="${entryId}">Remove</button>` : ''}
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div>
+                            <label for="date-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                            <input type="date" id="date-${dateCount}" name="event-date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="time-from-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Time From</label>
+                            <input type="time" id="time-from-${dateCount}" name="time-from" required class="time-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="time-to-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Time To</label>
+                            <input type="time" id="time-to-${dateCount}" name="time-to" required class="time-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="duration-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Duration</label>
+                            <input type="text" id="duration-${dateCount}" name="duration" readonly class="duration-output w-full px-3 py-2 border border-gray-200 bg-gray-100 rounded-lg cursor-not-allowed">
+                        </div>
+                    </div>
+                `;
+                dateTimeSection.appendChild(entryDiv);
+                updateDateCounter();
+            };
+
+            const calculateDuration = (timeFrom, timeTo) => {
+                if (!timeFrom || !timeTo) return '';
+                
+                const from = new Date(`1970-01-01T${timeFrom}:00`);
+                const to = new Date(`1970-01-01T${timeTo}:00`);
+
+                let diff = to.getTime() - from.getTime();
+                if (diff < 0) diff += 24 * 60 * 60 * 1000; // Handle overnight
+
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+                return `${hours}h ${minutes}m`;
+            };
+
+            const handleFormSubmit = async (e) => {
+                e.preventDefault();
+                if (SCRIPT_URL === "PASTE_YOUR_WEB_APP_URL_HERE") {
+                    alert("Please paste your Google Apps Script URL into the SCRIPT_URL constant in the HTML file.");
+                    return;
+                }
+
+                formContainer.classList.add('hidden');
+                statusContainer.classList.remove('hidden');
+                loadingSpinner.style.display = 'block';
+                statusHeading.textContent = 'Submitting...';
+                statusMessage.textContent = 'Please wait while we send your activity details.';
+                newFormBtn.classList.add('hidden');
+
+                const baseData = {
+                    agentName: document.getElementById('agent-name').value,
+                    teamLeader: document.getElementById('team-leader').value,
+                };
+
+                const dateEntries = document.querySelectorAll('[id^="date-entry-"]');
+                const submissionPromises = [];
+
+                dateEntries.forEach(entry => {
+                    const entryNumber = entry.id.split('-')[2];
+                    const date = entry.querySelector(`#date-${entryNumber}`).value;
+                    const timeFrom = entry.querySelector(`#time-from-${entryNumber}`).value;
+                    const timeTo = entry.querySelector(`#time-to-${entryNumber}`).value;
+                    const duration = entry.querySelector(`#duration-${entryNumber}`).value;
+
+                    if (date && timeFrom && timeTo) {
+                        const rowData = { ...baseData, date, timeFrom, timeTo, duration };
+                        const promise = fetch(SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            cache: 'no-cache',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(rowData),
+                            redirect: 'follow'
+                        });
+                        submissionPromises.push(promise);
+                    }
+                });
+
+                try {
+                    await Promise.all(submissionPromises);
+                    loadingSpinner.style.display = 'none';
+                    statusHeading.textContent = 'Submission Successful!';
+                    statusMessage.textContent = 'Your activity has been recorded in the Google Sheet.';
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    loadingSpinner.style.display = 'none';
+                    statusHeading.textContent = 'Submission Failed';
+                    statusMessage.textContent = 'An error occurred. Please try again.';
+                } finally {
+                    newFormBtn.classList.remove('hidden');
+                }
+            };
+            
+            const resetFormView = () => {
+                form.reset();
+                dateTimeSection.innerHTML = '';
+                dateCount = 0;
+                addDateTimeEntry();
+                statusContainer.classList.add('hidden');
+                formContainer.classList.remove('hidden');
+            };
+
+            // --- Event Listeners ---
+            addDateBtn.addEventListener('click', addDateTimeEntry);
+
+            dateTimeSection.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-date-btn')) {
+                    const targetId = e.target.dataset.target;
+                    document.getElementById(targetId)?.remove();
+                    dateCount--;
+                    updateDateCounter();
+                }
+            });
+
+            dateTimeSection.addEventListener('input', (e) => {
+                 if (e.target.classList.contains('time-input')) {
+                    const parentEntry = e.target.closest('[id^="date-entry-"]');
+                    const timeFrom = parentEntry.querySelector('input[name="time-from"]').value;
+                    const timeTo = parentEntry.querySelector('input[name="time-to"]').value;
+                    const durationOutput = parentEntry.querySelector('.duration-output');
+                    durationOutput.value = calculateDuration(timeFrom, timeTo);
+                 }
+            });
+
+            form.addEventListener('submit', handleFormSubmit);
+            newFormBtn.addEventListener('click', resetFormView);
+
+            // --- Initial Setup ---
+            addDateTimeEntry();
+        });
+    </script>
+</body>
+</html>
