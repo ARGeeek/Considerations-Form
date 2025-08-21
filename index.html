@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Request Form</title>
+    <title>Activity Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +31,10 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .readonly-input {
+            background-color: #f3f4f6; /* gray-100 */
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
@@ -39,130 +43,19 @@
         <!-- Form Container -->
         <div id="form-container" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200 fade-in">
             <div class="mb-6 text-center">
-                <h1 class="text-3xl font-bold text-gray-800">Considerations Form</h1>
-                <p class="text-gray-500 mt-2">Please fill out the details for your Consideration request below.</p>
+                <h1 class="text-3xl font-bold text-gray-800">Exceptions Form</h1>
+                <p class="text-gray-500 mt-2">Please fill out the details for your Exception request below.</p>
             </div>
             
             <form id="event-form">
                 <!-- Main Details Section -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label for="agent-name" class="block text-sm font-medium text-gray-700 mb-1">Agent Name</label>
-                        <select id="agent-name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
-                            <option value="" disabled selected>Select an Agent</option>
-                            <option value="AbanoubMakram">AbanoubMakram</option>
-                            <option value="AbdelazizAshraf">AbdelazizAshraf</option>
-                            <option value="AbdelrahmanAdel">AbdelrahmanAdel</option>
-                            <option value="AbdelrahmanSalem">AbdelrahmanSalem</option>
-                            <option value="AbdullahTariq">AbdullahTariq</option>
-                            <option value="AhmadAshraf">AhmadAshraf</option>
-                            <option value="AhmedIessa">AhmedIessa</option>
-                            <option value="AlaaHamdi">AlaaHamdi</option>
-                            <option value="AlaaTariq">AlaaTariq</option>
-                            <option value="AliAshraf">AliAshraf</option>
-                            <option value="AlyMuhammad">AlyMuhammad</option>
-                            <option value="AlshaimaaAhmed">AlshaimaaAhmed</option>
-                            <option value="Amal Ahmad">Amal Ahmad</option>
-                            <option value="AmaniAssem">AmaniAssem</option>
-                            <option value="AmrAlsayed">AmrAlsayed</option>
-                            <option value="AnoudMohamed">AnoudMohamed</option>
-                            <option value="AyaNabel">AyaNabel</option>
-                            <option value="AyaRajab">AyaRajab</option>
-                            <option value="PassantBeshara">PassantBeshara</option>
-                            <option value="BeshoyZekry">BeshoyZekry</option>
-                            <option value="DavidEmad">DavidEmad</option>
-                            <option value="DinaAnwar">DinaAnwar</option>
-                            <option value="DinaAtef">DinaAtef</option>
-                            <option value="DoaaAhmad">DoaaAhmad</option>
-                            <option value="DoniaHosny">DoniaHosny</option>
-                            <option value="IbtesamMahrous">IbtesamMahrous</option>
-                            <option value="ElariaAtef">ElariaAtef</option>
-                            <option value="elhamabdelsalam">elhamabdelsalam</option>
-                            <option value="EmanMarey">EmanMarey</option>
-                            <option value="EmanHossny">EmanHossny</option>
-                            <option value="EnasAdel">EnasAdel</option>
-                            <option value="Eslamalazhary">Eslamalazhary</option>
-                            <option value="EsraaAhmed">EsraaAhmed</option>
-                            <option value="EsraaIbrahim">EsraaIbrahim</option>
-                            <option value="FarahAtef">FarahAtef</option>
-                            <option value="FairouzFanos">FairouzFanos</option>
-                            <option value="Filopateerboshra">Filopateerboshra</option>
-                            <option value="Habibamontaser">Habibamontaser</option>
-                            <option value="HagarMagdi">HagarMagdi</option>
-                            <option value="HebaZakaria">HebaZakaria</option>
-                            <option value="HishamYosri">HishamYosri</option>
-                            <option value="HossamZohair">HossamZohair</option>
-                            <option value="Ibraheemmamdoh">Ibraheemmamdoh</option>
-                            <option value="EmanElsayed">EmanElsayed</option>
-                            <option value="islamsiam">islamsiam</option>
-                            <option value="LamaNabil">LamaNabil</option>
-                            <option value="LamiaaEssam">LamiaaEssam</option>
-                            <option value="MahaMuhammed">MahaMuhammed</option>
-                            <option value="MahaTarek">MahaTarek</option>
-                            <option value="MahmodAhmad">MahmodAhmad</option>
-                            <option value="MahmoudAshraf">MahmoudAshraf</option>
-                            <option value="MahmoudAnwar">MahmoudAnwar</option>
-                            <option value="MahmoudIbrahem">MahmoudIbrahem</option>
-                            <option value="MahmodRashad">MahmodRashad</option>
-                            <option value="MahrailMagid">MahrailMagid</option>
-                            <option value="MalakAbdelnaser">MalakAbdelnaser</option>
-                            <option value="Manalmohamed">Manalmohamed</option>
-                            <option value="MaramMohamed">MaramMohamed</option>
-                            <option value="MariamMoustafa">MariamMoustafa</option>
-                            <option value="MariamNasser">MariamNasser</option>
-                            <option value="MartinaNabil">MartinaNabil</option>
-                            <option value="MaiadaAli">MaiadaAli</option>
-                            <option value="MayarIsmail">MayarIsmail</option>
-                            <option value="minaezat">minaezat</option>
-                            <option value="MinaMelad">MinaMelad</option>
-                            <option value="MoamenSami">MoamenSami</option>
-                            <option value="Mohamedelbarbary">Mohamedelbarbary</option>
-                            <option value="MuhammedHashem">MuhammedHashem</option>
-                            <option value="MahmmadMagdyHanfy">MahmmadMagdyHanfy</option>
-                            <option value="Mohammedibraheem">Mohammedibraheem</option>
-                            <option value="Monahassan">Monahassan</option>
-                            <option value="MonaRagab">MonaRagab</option>
-                            <option value="mosaabali">mosaabali</option>
-                            <option value="muhammadelkhateeb">muhammadelkhateeb</option>
-                            <option value="MuhammedFathi">MuhammedFathi</option>
-                            <option value="NadaHamada">NadaHamada</option>
-                            <option value="NermineElfeki">NermineElfeki</option>
-                            <option value="NermineRamsis">NermineRamsis</option>
-                            <option value="NesmaEid">NesmaEid</option>
-                            <option value="Nohasameer">Nohasameer</option>
-                            <option value="NourhanSalah">NourhanSalah</option>
-                            <option value="NourhanMohamed">NourhanMohamed</option>
-                            <option value="RanaShawki">RanaShawki</option>
-                            <option value="RaniaAbdelsalam">RaniaAbdelsalam</option>
-                            <option value="rawanismael">rawanismael</option>
-                            <option value="RehamNabil">RehamNabil</option>
-                            <option value="RehanAbbas">RehanAbbas</option>
-                            <option value="SaadSaad">SaadSaad</option>
-                            <option value="SamaRoshdi">SamaRoshdi</option>
-                            <option value="SamarMorsy">SamarMorsy</option>
-                            <option value="SaraSaleh">SaraSaleh</option>
-                            <option value="SarahFakhri">SarahFakhri</option>
-                            <option value="SherinSayed">SherinSayed</option>
-                            <option value="ShaimaaLotfy">ShaimaaLotfy</option>
-                            <option value="Shorouksayed">Shorouksayed</option>
-                            <option value="SiharAshraf">SiharAshraf</option>
-                            <option value="SilvanaEmad">SilvanaEmad</option>
-                            <option value="SilvianaAdel">SilvianaAdel</option>
-                            <option value="SohailaAbdelwahed">SohailaAbdelwahed</option>
-                            <option value="SohailaMahmoud">SohailaMahmoud</option>
-                            <option value="SohailaElsayed">SohailaElsayed</option>
-                            <option value="SuzanMagdi">SuzanMagdi</option>
-                            <option value="TamerRefaei">TamerRefaei</option>
-                            <option value="TrizaSaber">TrizaSaber</option>
-                            <option value="YaraEmad">YaraEmad</option>
-                            <option value="YaraHassan">YaraHassan</option>
-                            <option value="Yasmin Ezz">Yasmin Ezz</option>
-                            <option value="YostinaHany">YostinaHany</option>
-                            <option value="HajarAbdullah">HajarAbdullah</option>
-                            <option value="SondosSaleh">SondosSaleh</option>
-                            <option value="HagerYoussef">HagerYoussef</option>
-                            <option value="KamalGhoneem">KamalGhoneem</option>
-                        </select>
+                        <label for="hr-code" class="block text-sm font-medium text-gray-700 mb-1">HR Code</label>
+                        <input type="text" id="hr-code" list="hr-code-list" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Type to search...">
+                        <datalist id="hr-code-list">
+                            <!-- HR Codes will be populated by JavaScript -->
+                        </datalist>
                     </div>
                     <div>
                         <label for="team-leader" class="block text-sm font-medium text-gray-700 mb-1">Team Leader</label>
@@ -174,20 +67,28 @@
                             <option value="Kirolos Gameel">Kirolos Gameel</option>
                         </select>
                     </div>
+                    <div>
+                        <label for="agent-name" class="block text-sm font-medium text-gray-700 mb-1">Agent Name</label>
+                        <input type="text" id="agent-name" readonly class="w-full px-4 py-2 border border-gray-300 rounded-lg readonly-input">
+                    </div>
+                     <div>
+                        <label for="agent-id" class="block text-sm font-medium text-gray-700 mb-1">ID</label>
+                        <input type="text" id="agent-id" readonly class="w-full px-4 py-2 border border-gray-300 rounded-lg readonly-input">
+                    </div>
                 </div>
 
                 <!-- Dynamic Date and Time Section -->
                 <div class="space-y-4 mb-6" id="date-time-section">
-                    <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">Activity Dates & Times</h2>
+                    <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">Activity Details</h2>
                     <!-- This container will hold the dynamically added date/time fields -->
                 </div>
 
                 <!-- Action Buttons for Dates -->
                 <div class="flex items-center gap-4 mb-8">
                     <button type="button" id="add-date-btn" class="bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition shadow-sm">
-                        Add Date
+                        Add Entry
                     </button>
-                    <p id="date-counter" class="text-sm text-gray-500">1 of 5 dates added.</p>
+                    <p id="date-counter" class="text-sm text-gray-500">1 of 5 entries added.</p>
                 </div>
 
                 <!-- Form Submission Button -->
@@ -197,7 +98,7 @@
                     </button>
                 </div>
             </form>
-            <!-- Signature Updated Here -->
+            <!-- Signature -->
             <div class="text-center border-t border-gray-200 pt-4 mt-8">
                 <p class="text-base text-orange-500 font-semibold">Created By Hatem Medhat</p>
             </div>
@@ -218,7 +119,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Agent Data from your provided sheet ---
+            const agentsData = [
+                { id: 'X2003111', hrCode: '825811', agentName: 'Abanoub Makram' }, { id: 'X2047656', hrCode: '838865', agentName: 'Abdel Aaziz Ashraf' }, { id: 'X2027633', hrCode: '832336', agentName: 'AbdElrahman Adel Mohamed' }, { id: 'X1264160', hrCode: '821310', agentName: 'Abdelrahman Salem' }, { id: 'X1387122', hrCode: '824283', agentName: 'Abdullah Tariq' }, { id: 'X2091475', hrCode: '844909', agentName: 'Ahmed Elmohamdi' }, { id: 'X2100111', hrCode: '844985', agentName: 'Alaa Hamdy' }, { id: 'X1370543', hrCode: '824262', agentName: 'Alaa Tariq' }, { id: 'X1264180', hrCode: '821313', agentName: 'Ali Ashraf' }, { id: 'X2065273', hrCode: '838916', agentName: 'Ali Mohamed' }, { id: 'YEG002272', hrCode: '40544', agentName: 'Alshimaa Ahmed' }, { id: 'X2094368', hrCode: '844965', agentName: 'Amal Ahmed' }, { id: 'X2040351', hrCode: '835769', agentName: 'Amani Assem' }, { id: 'X1325802', hrCode: '823222', agentName: 'Amr Ahmed' }, { id: 'X2079589', hrCode: '842569', agentName: 'Anoud Mohamed' }, { id: 'X2077125', hrCode: '842554', agentName: 'Aya Nabil' }, { id: 'X1277043', hrCode: '821327', agentName: 'Aya Rajab' }, { id: 'X2047645', hrCode: '838869', agentName: 'Bassant Beshara Nas' }, { id: 'X2002026', hrCode: '825806', agentName: 'Beshoy Zekry' }, { id: 'X1325803', hrCode: '823223', agentName: 'David Emad' }, { id: 'X2079590', hrCode: '842570', agentName: 'Dina Anwar' }, { id: 'X2082092', hrCode: '843497', agentName: 'Dina Atef' }, { id: 'X2094369', hrCode: '844966', agentName: 'Doaa Ahmed' }, { id: 'X2091476', hrCode: '844910', agentName: 'Donia Hosny' }, { id: 'X2082093', hrCode: '843498', agentName: 'Ebtesam Mahrous' }, { id: 'X2047646', hrCode: '838870', agentName: 'Elaria Atef' }, { id: 'X2079591', hrCode: '842571', agentName: 'Elham Abdelsalam' }, { id: 'X2047647', hrCode: '838871', agentName: 'Eman Marey' }, { id: 'X2082094', hrCode: '843499', agentName: 'Eman Hossny' }, { id: 'X2047648', hrCode: '838872', agentName: 'Enas Adel' }, { id: 'X2047649', hrCode: '838873', agentName: 'Eslam Azhary' }, { id: 'X2094370', hrCode: '844967', agentName: 'Esraa Ahmed' }, { id: 'X2047650', hrCode: '838874', agentName: 'Esraa Ibrahim' }, { id: 'X2091477', hrCode: '844911', agentName: 'Farah Atef' }, { id: 'X2047651', hrCode: '838875', agentName: 'Fairouz Fanos' }, { id: 'X2047652', hrCode: '838876', agentName: 'Filopateer Boshra' }, { id: 'X2047653', hrCode: '838877', agentName: 'Habiba Montaser' }, { id: 'X2047654', hrCode: '838878', agentName: 'Hagar Magdi' }, { id: 'X2094371', hrCode: '844968', agentName: 'Heba Zakaria' }, { id: 'X2047655', hrCode: '838879', agentName: 'Hisham Yosri' }, { id: 'X2047657', hrCode: '838880', agentName: 'Hossam Zohair' }, { id: 'X2047658', hrCode: '838881', agentName: 'Ibraheem Mamdoh' }, { id: 'X2047659', hrCode: '838882', agentName: 'Eman Elsayed' }, { id: 'X2047660', hrCode: '838883', agentName: 'Islam Siam' }, { id: 'X2047661', hrCode: '838884', agentName: 'Lama Nabil' }, { id: 'X2047662', hrCode: '838885', agentName: 'Lamiaa Essam' }, { id: 'X2047663', hrCode: '838886', agentName: 'Maha Muhammed' }, { id: 'X2047664', hrCode: '838887', agentName: 'Maha Tarek' }, { id: 'X2047665', hrCode: '838888', agentName: 'Mahmod Ahmad' }, { id: 'X2047666', hrCode: '838889', agentName: 'Mahmoud Ashraf' }, { id: 'X2047667', hrCode: '838890', agentName: 'Mahmoud Anwar' }, { id: 'X2047668', hrCode: '838891', agentName: 'Mahmoud Ibrahem' }, { id: 'X2047669', hrCode: '838892', agentName: 'Mahmod Rashad' }, { id: 'X2047670', hrCode: '838893', agentName: 'Mahrail Magid' }, { id: 'X2047671', hrCode: '838894', agentName: 'Malak Abdelnaser' }, { id: 'X2047672', hrCode: '838895', agentName: 'Manal Mohamed' }, { id: 'X2047673', hrCode: '838896', agentName: 'Maram Mohamed' }, { id: 'X2047674', hrCode: '838897', agentName: 'Mariam Moustafa' }, { id: 'X2047675', hrCode: '838898', agentName: 'Mariam Nasser' }, { id: 'X2047676', hrCode: '838899', agentName: 'Martina Nabil' }, { id: 'X2047677', hrCode: '838900', agentName: 'Maiada Ali' }, { id: 'X2047678', hrCode: '838901', agentName: 'Mayar Ismail' }, { id: 'X2002024', hrCode: '825804', agentName: 'Mina Ezat' }, { id: 'X1160340', hrCode: '817339', agentName: 'MinaMelad' }, { id: 'X1059943', hrCode: '40951', agentName: 'Moamen Samy' }, { id: 'X2046113', hrCode: '837347', agentName: 'Mohamed Ahmed' }, { id: 'X2141350', hrCode: '851052', agentName: 'Mohamed Hamed Atya' }, { id: 'X2141351', hrCode: '851054', agentName: 'Mohammed ibraheem' }, { id: 'X723901', hrCode: '40628', agentName: 'Mona hassan' }, { id: 'X1387129', hrCode: '824284', agentName: 'Mosaab Ali' }, { id: 'X1277020', hrCode: '821319', agentName: 'Muhammad Ismail' }, { id: 'X2122166', hrCode: '851055', agentName: 'Muhammed Fathi' }, { id: 'X2108397', hrCode: '848192', agentName: 'Nada Hamada' }, { id: 'X2082090', hrCode: '843495', agentName: 'Nermine Elfeki' }, { id: 'X2141339', hrCode: '851056', agentName: 'Nesma Mohamed' }, { id: 'X1075901', hrCode: '40986', agentName: 'Noha sameer' }, { id: 'X2002022', hrCode: '825802', agentName: 'Nourhan Salah' }, { id: 'X2089012', hrCode: '844970', agentName: 'NourhanMohamed' }, { id: 'X2048908', hrCode: '838909', agentName: 'Rana Shawky' }, { id: 'X2141359', hrCode: '851045', agentName: 'Rania Abdelsalam' }, { id: 'X2002023', hrCode: '825803', agentName: 'rawan ismael' }
+            ];
+
+            // --- DOM Element References ---
             const form = document.getElementById('event-form');
+            const hrCodeInput = document.getElementById('hr-code');
+            const agentNameInput = document.getElementById('agent-name');
+            const agentIdInput = document.getElementById('agent-id');
             const dateTimeSection = document.getElementById('date-time-section');
             const addDateBtn = document.getElementById('add-date-btn');
             const dateCounter = document.getElementById('date-counter');
@@ -229,14 +139,37 @@
             const statusMessage = document.getElementById('status-message');
             const loadingSpinner = document.getElementById('loading-spinner');
 
-            // !!! IMPORTANT: PASTE YOUR GOOGLE APPS SCRIPT URL HERE !!!
+            // !!! IMPORTANT: THIS URL SHOULD BE YOUR GOOGLE APPS SCRIPT URL !!!
             const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxaM9rYx10x3Zkx9gUlvTzNH5hQ0bY090DfOCIu80Qpedd5zg0a7bVCcP3hQ5hLR3pW/exec";
 
             const MAX_DATES = 5;
             let dateCount = 0;
 
+            // --- Functions ---
+            const populateHrCodes = () => {
+                const dataList = document.getElementById('hr-code-list');
+                agentsData.forEach(agent => {
+                    const option = document.createElement('option');
+                    option.value = agent.hrCode;
+                    dataList.appendChild(option);
+                });
+            };
+
+            const handleHrCodeChange = (e) => {
+                const selectedHrCode = e.target.value;
+                const selectedAgent = agentsData.find(agent => agent.hrCode === selectedHrCode);
+
+                if (selectedAgent) {
+                    agentNameInput.value = selectedAgent.agentName;
+                    agentIdInput.value = selectedAgent.id;
+                } else {
+                    agentNameInput.value = '';
+                    agentIdInput.value = '';
+                }
+            };
+
             const updateDateCounter = () => {
-                dateCounter.textContent = `${dateCount} of ${MAX_DATES} dates added.`;
+                dateCounter.textContent = `${dateCount} of ${MAX_DATES} entries added.`;
                 addDateBtn.disabled = dateCount >= MAX_DATES;
                 addDateBtn.classList.toggle('opacity-50', dateCount >= MAX_DATES);
                 addDateBtn.classList.toggle('cursor-not-allowed', dateCount >= MAX_DATES);
@@ -248,11 +181,11 @@
 
                 const entryId = `date-entry-${dateCount}`;
                 const entryDiv = document.createElement('div');
-                entryDiv.className = 'p-4 border rounded-lg bg-gray-50 fade-in';
+                entryDiv.className = 'p-4 border rounded-lg bg-gray-50 fade-in space-y-4';
                 entryDiv.id = entryId;
 
                 entryDiv.innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
+                    <div class="flex justify-between items-center">
                         <h3 class="font-semibold text-gray-600">Entry #${dateCount}</h3>
                         ${dateCount > 1 ? `<button type="button" class="remove-date-btn text-red-500 hover:text-red-700 font-semibold text-sm" data-target="${entryId}">Remove</button>` : ''}
                     </div>
@@ -271,7 +204,23 @@
                         </div>
                         <div>
                             <label for="duration-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Duration</label>
-                            <input type="text" id="duration-${dateCount}" name="duration" readonly class="duration-output w-full px-3 py-2 border border-gray-200 bg-gray-100 rounded-lg cursor-not-allowed">
+                            <input type="text" id="duration-${dateCount}" name="duration" readonly class="duration-output w-full px-3 py-2 border border-gray-200 bg-gray-100 rounded-lg readonly-input">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                         <div>
+                            <label for="exception-type-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Exception Type</label>
+                            <select id="exception-type-${dateCount}" name="exception-type" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500">
+                                <option value="" disabled selected>Select a Type</option>
+                                <option value="Hurricane">Hurricane</option>
+                                <option value="Volcano">Volcano</option>
+                                <option value="Earthquake">Earthquake</option>
+                                <option value="Tsunami floods">Tsunami floods</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="exception-reason-${dateCount}" class="block text-sm font-medium text-gray-700 mb-1">Exception Reason</label>
+                            <textarea id="exception-reason-${dateCount}" name="exception-reason" rows="1" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500"></textarea>
                         </div>
                     </div>
                 `;
@@ -281,16 +230,12 @@
 
             const calculateDuration = (timeFrom, timeTo) => {
                 if (!timeFrom || !timeTo) return '';
-                
                 const from = new Date(`1970-01-01T${timeFrom}:00`);
                 const to = new Date(`1970-01-01T${timeTo}:00`);
-
                 let diff = to.getTime() - from.getTime();
-                if (diff < 0) diff += 24 * 60 * 60 * 1000; // Handle overnight
-
+                if (diff < 0) diff += 24 * 60 * 60 * 1000;
                 const hours = Math.floor(diff / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
                 return `${hours}h ${minutes}m`;
             };
 
@@ -309,7 +254,9 @@
                 newFormBtn.classList.add('hidden');
 
                 const baseData = {
+                    hrCode: document.getElementById('hr-code').value,
                     agentName: document.getElementById('agent-name').value,
+                    agentId: document.getElementById('agent-id').value,
                     teamLeader: document.getElementById('team-leader').value,
                 };
 
@@ -322,9 +269,11 @@
                     const timeFrom = entry.querySelector(`#time-from-${entryNumber}`).value;
                     const timeTo = entry.querySelector(`#time-to-${entryNumber}`).value;
                     const duration = entry.querySelector(`#duration-${entryNumber}`).value;
+                    const exceptionType = entry.querySelector(`select[name="exception-type"]`).value;
+                    const exceptionReason = entry.querySelector(`textarea[name="exception-reason"]`).value;
 
                     if (date && timeFrom && timeTo) {
-                        const rowData = { ...baseData, date, timeFrom, timeTo, duration };
+                        const rowData = { ...baseData, date, timeFrom, timeTo, duration, exceptionType, exceptionReason };
                         const promise = fetch(SCRIPT_URL, {
                             method: 'POST',
                             mode: 'no-cors',
@@ -355,6 +304,8 @@
             const resetFormView = () => {
                 form.reset();
                 dateTimeSection.innerHTML = '';
+                agentNameInput.value = '';
+                agentIdInput.value = '';
                 dateCount = 0;
                 addDateTimeEntry();
                 statusContainer.classList.add('hidden');
@@ -362,6 +313,7 @@
             };
 
             // --- Event Listeners ---
+            hrCodeInput.addEventListener('input', handleHrCodeChange);
             addDateBtn.addEventListener('click', addDateTimeEntry);
 
             dateTimeSection.addEventListener('click', (e) => {
@@ -387,6 +339,7 @@
             newFormBtn.addEventListener('click', resetFormView);
 
             // --- Initial Setup ---
+            populateHrCodes();
             addDateTimeEntry();
         });
     </script>
